@@ -1,24 +1,31 @@
-/// <reference types="cypress" />
-describe("login test", () => {
-    it("visit gallery page", () => {
+// <reference types="cypress" />
+describe("Register Test", () => {
+    it("Visit Gallery Page", () => {
         cy.visit("/");
     });
-    it ("click on the registere button", () => {
-    cy.visit("/");
-    //cy.get('a[href="/register"]').click();
-    cy.get('.nav-link').eq(1).click();
-    cy.get('#email').type('zxcv@zxcv.com');
-    cy.get('#password').type('zxcvzxcvzxcv123');
-    cy.get('button').click();
+    it("Valid Register", () => {
+        cy.get('a[href="/register"]').click();
+        cy.get("input[id='first-name']").type("NekoIme");
+        cy.get("input[id='last-name']").type("NekoPrezime");
+        cy.get("input[id='email']").type("neko_ime@email.com");
+        cy.get("input[id='password']").type("Test1234");
+        cy.get("input[id='password-confirmation']").type("Test1234");
+        cy.get("input[type='checkbox']").click();
+        cy.get("button[type='submit']").click();
+        cy.get("a[role='button ']").click()
     });
 
-    it('lo', ()=>{
-        // logout
-    cy.get('.nav-link ').should('have.length', 4);
-    cy.get('.nav-link').eq(3).click();
+    it(" test za first_name", () => {
+
     });
+
+    it(" test za last_name", () => {
+
+    });
+
+    it(" test za email", () => {
+
+    });
+
 
 });
-
-
-
